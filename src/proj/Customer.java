@@ -4,8 +4,6 @@ import java.util.*;
 import java.util.Scanner;
 
 public class Customer {
-	Scanner scnr = new Scanner(System.in);
-	Customer customer1 = new Customer();
 	private String customerName;
 	private String location;
 	private boolean isReturning;
@@ -62,7 +60,7 @@ public class Customer {
 		System.out.println("Enter your company's location");
 		this.location = scnr.nextLine();
 		this.isReturning = this.isReturning();
-		customerList.add(customer1);
+		//customerList.add(this.Customer);
 	}
 
 

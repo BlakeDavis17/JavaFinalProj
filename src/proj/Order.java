@@ -11,8 +11,6 @@ public class Order
 	protected static ArrayList<Order> orderList = new ArrayList<Order>();
 
 
-
-
 	//constructors
 	public Order()
 	{
@@ -33,16 +31,28 @@ public class Order
 
 	public void placeOrder(Scanner scnr)
 	{
-
 		this.quantity = scnr.nextInt();
 	}
 	
 	public void printInfo() {
+	    if (product == null) {
+	    	System.out.println("Product must be defined");
+	    }
+	    
+	    else {
 		System.out.println("Product: " + product.getProductName());
 		System.out.println("Quantity: " + quantity);
 		System.out.println("Total cost: $" + (product.getPrice() * quantity));
 		System.out.println("Shipping Priority: " + isShippingPriority);
+	    }
 		
+	}
+	
+	public static void printOrderHistory() {
+		for(Order x : Order.orderList) {
+			x.printInfo();
+			System.out.println("-----------------");
+		}
 	}
 	
 

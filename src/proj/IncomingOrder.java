@@ -10,8 +10,8 @@ public class IncomingOrder extends Order
 	}
 	
 
-	public IncomingOrder(Supplier supplier) {
-		super();
+	public IncomingOrder(Supplier supplier, Product product, int quantity, boolean isShippingPriority) {
+		super(product, quantity, isShippingPriority);
 		this.supplier = supplier;
 	}
 
@@ -21,8 +21,9 @@ public class IncomingOrder extends Order
 	@Override
 	public void printInfo() {
 		System.out.println("INCOMING");
-		super.printInfo();
 		System.out.println("Supplier: " + supplier.getSupplierName());
+		super.printInfo();
+		
 		
 	}
 

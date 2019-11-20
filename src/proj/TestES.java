@@ -4,21 +4,19 @@ public class TestES {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-        Supplier ATNT = new Supplier();
-		Product trey = new Product();
+		Product prod1 = new Product("Phone", 7.0);
+        Supplier ATNT = new Supplier("At&t");
+		Customer cust1 = new Customer("David", "Atlanta", false);
 		
-		Order dicks = new Order(trey, 5, false);
-		Order balls = new Order();
-		IncomingOrder customerOrder = new IncomingOrder();
-
+		//Order dicks = new Order(prod1, 5, false);
+		//Order balls = new Order();
+		IncomingOrder supplierOrder = new IncomingOrder(ATNT, prod1, 6, true);
+        OutgoingOrder customerOrder = new OutgoingOrder(cust1, prod1, 5, false);
 		
-		balls.printInfo();
+		//balls.printInfo();
+		Order.printOrderHistory();
 		
-		for(Order x : Order.orderList) {
-			System.out.println(x);
-		}
-		
-		customerOrder.printInfo();
+		//customerOrder.printInfo();
 	}
 
 }
